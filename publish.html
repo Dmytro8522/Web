@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Добавить объект – RealtyPro</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Sx4wl/ryVcaX0FDvyfaUPaFn/WvjVYVJg3kuvf5xfrB2f0y0DTnI7q1G/Sx8bZysB6wxeGX3VZj6gVj4pRbHRA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-container">
+        <div class="logo">
+          <a href="index.html">Realty<span>Pro</span></a>
+        </div>
+        <nav class="nav">
+          <a href="index.html">Главная</a>
+          <a href="index.html#popular">Объекты</a>
+          <a href="index.html#features">О нас</a>
+          <a href="index.html#contact">Контакты</a>
+        </nav>
+      </div>
+    </header>
+    <section class="form-page">
+      <div class="form-container">
+        <h1>Добавить объект</h1>
+        <form onsubmit="alert('Ваш объект опубликован'); return false;">
+          <div class="form-group">
+            <label for="propTitle">Название объекта</label>
+            <input type="text" id="propTitle" placeholder="Например, солнечная вилла" required />
+          </div>
+          <div class="form-group">
+            <label for="propLocation">Адрес / город</label>
+            <input type="text" id="propLocation" placeholder="Город, страна" required />
+          </div>
+          <div class="form-group">
+            <label for="propPrice">Цена (€)</label>
+            <input type="number" id="propPrice" placeholder="Укажите цену" required />
+          </div>
+          <div class="form-group">
+            <label for="propType">Тип объекта</label>
+            <select id="propType" required>
+              <option value="" disabled selected>Выберите тип</option>
+              <option value="apartment">Квартира</option>
+              <option value="house">Дом</option>
+              <option value="plot">Участок</option>
+              <option value="commercial">Коммерция</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Количество комнат</label>
+            <input type="number" min="1" max="20" placeholder="Например, 5" required />
+          </div>
+          <div class="form-group">
+            <label>Количество ванных</label>
+            <input type="number" min="1" max="20" placeholder="Например, 3" required />
+          </div>
+          <div class="form-group">
+            <label>Площадь (м²)</label>
+            <input type="number" min="10" placeholder="Например, 250" required />
+          </div>
+          <div class="form-group">
+            <label for="propDesc">Описание</label>
+            <textarea id="propDesc" placeholder="Опишите объект..." required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="propPhotos">Фотографии</label>
+            <input type="file" id="propPhotos" multiple accept="image/*" />
+            <small style="display:block; margin-top:0.3rem; color: var(--text-secondary);">Вы можете загрузить несколько фото</small>
+          </div>
+          <div class="form-group">
+            <label for="propVideo">Видео (ссылка YouTube/Vimeo)</label>
+            <input type="url" id="propVideo" placeholder="https://" />
+          </div>
+          <!-- План / чертеж -->
+          <div class="form-group">
+            <label for="propPlan">План / чертеж</label>
+            <input type="file" id="propPlan" accept="image/*,application/pdf" />
+            <small style="display:block; margin-top:0.3rem; color: var(--text-secondary);">
+              Загрузите план или чертеж объекта. На его основе будет сгенерирована 3D‑визуализация
+            </small>
+          </div>
+          <!-- Кнопка генерации 3D визуализации -->
+          <div class="form-group">
+            <button type="button" class="btn small" onclick="alert('Функция генерации 3D пока недоступна'); return false;">
+              Создать&nbsp;3D‑визуализацию
+            </button>
+          </div>
+          <!-- Альтернативная возможность: загрузить готовую 3D модель (если она уже есть) -->
+          <div class="form-group">
+            <label for="prop3D">Готовая 3D‑модель (GLB/GLTF)</label>
+            <input type="file" id="prop3D" accept=".glb,.gltf" />
+            <small style="display:block; margin-top:0.3rem; color: var(--text-secondary);">
+              Вы можете загрузить собственную 3D‑модель для виртуального тура
+            </small>
+          </div>
+          <button type="submit" class="btn submit">Опубликовать</button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

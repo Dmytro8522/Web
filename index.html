@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realty Portal – Главная</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Sx4wl/ryVcaX0FDvyfaUPaFn/WvjVYVJg3kuvf5xfrB2f0y0DTnI7q1G/Sx8bZysB6wxeGX3VZj6gVj4pRbHRA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Ionicons for colourful feature icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container header-container">
+        <div class="logo">
+          <a href="index.html">Realty<span>Pro</span></a>
+        </div>
+        <nav class="nav">
+          <a href="#">Главная</a>
+          <a href="#popular">Объекты</a>
+          <a href="#features">О нас</a>
+          <a href="#contact">Контакты</a>
+          <!-- Link to allow users to publish a new property. If not authenticated,
+               this will take them to the registration screen. -->
+          <a href="register.html" class="btn btn-outline small">Разместить объект</a>
+          <button class="btn btn-outline small" onclick="alert('Функция входа ещё не реализована')">Войти</button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <!-- Используем изображение дома без текста в качестве фона -->
+    <!-- Hero section with a stunning generated illustration of a modern villa.  
+         The background image is a hand‑crafted digital illustration generated to
+         evoke warmth and modernity without using any of the provided images with overlaid text.  -->
+    <section class="hero" style="background-image: url('assets/hero_generated.png');">
+      <div class="overlay"></div>
+      <div class="container hero-content">
+        <h1>Найдите свой новый дом</h1>
+        <p>
+          Мы предлагаем тщательно отобранные объекты недвижимости по всему миру. Выберите дом мечты,
+          виллу у моря или современные апартаменты — легко и удобно.
+        </p>
+        <p style="font-weight: 600; color: var(--accent); margin-top: 0.5rem;">
+          Теперь с&nbsp;возможностью виртуального&nbsp;3D‑тура
+        </p>
+        <form class="search-bar" onsubmit="return false">
+          <div class="field">
+            <i class="fa-solid fa-location-dot"></i>
+            <select id="search-location">
+              <option selected disabled>Локация</option>
+              <option>Берлин</option>
+              <option>Киев</option>
+              <option>Дюссельдорф</option>
+            </select>
+          </div>
+          <div class="field">
+            <i class="fa-solid fa-house"></i>
+            <select id="search-type">
+              <option selected disabled>Тип объекта</option>
+              <option>Квартира</option>
+              <option>Дом</option>
+              <option>Участок</option>
+              <option>Коммерция</option>
+            </select>
+          </div>
+          <div class="field">
+            <i class="fa-solid fa-euro-sign"></i>
+            <select id="search-price">
+              <option selected disabled>Бюджет</option>
+              <option>До €200K</option>
+              <option>€200K–500K</option>
+              <option>€500K–1M</option>
+              <option>От €1M</option>
+            </select>
+          </div>
+          <button type="button" class="btn" onclick="alert('Поиск ещё не реализован')">
+            <i class="fa-solid fa-search"></i> Найти
+          </button>
+        </form>
+        <div class="stats">
+          <div class="stat">
+            <h2>1&nbsp;200+</h2>
+            <span>Объектов</span>
+          </div>
+          <div class="stat">
+            <h2>4&nbsp;500+</h2>
+            <span>Счастливых клиентов</span>
+          </div>
+          <div class="stat">
+            <h2>100+</h2>
+            <span>Наград</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlight 3D Tour capability -->
+    <section class="three-highlight">
+      <div class="container highlight-wrapper">
+        <div class="highlight-text">
+          <h2>Погрузитесь в 3D‑пространство</h2>
+          <p>
+            На RealtyPro вы можете не просто просмотреть фотографии и планировки. Наши виртуальные 3D‑туры
+            позволяют оказаться внутри объекта, оценить планировку, мебель и атмосферу, словно вы
+            действительно там.
+          </p>
+          <a href="property.html" class="btn small">Попробовать 3D‑тур</a>
+        </div>
+        <div class="highlight-media">
+          <div class="three-high-container">
+            <!-- Показ образца 3D‑визуализации в разрезе. В реальном проекте здесь может быть интерактивный вид. -->
+            <!-- Replace placeholder with generated top‑down 3D view -->
+            <img src="assets/immersive_top_view.png" alt="3D визуализация объекта" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Properties -->
+    <section class="popular" id="popular">
+      <div class="container">
+        <div class="section-head">
+          <h2>Популярные объекты</h2>
+          <a href="#" class="link-more">Посмотреть все&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+        </div>
+        <div class="properties-grid">
+          <!-- Card 1: Modern townhouse using the first reference image -->
+          <div class="property-card">
+            <div class="property-image" style="background-image: url('assets/townhouse.png');">
+              <span class="badge-3d">3D</span>
+            </div>
+            <div class="property-content">
+              <h3>Современный таунхаус</h3>
+              <p class="location"><i class="fa-solid fa-map-pin"></i> Берлин, Германия</p>
+              <p class="price">€550&nbsp;000</p>
+              <p class="details">4&nbsp;комнаты · 180&nbsp;м²</p>
+              <a href="property.html" class="btn small">Подробнее</a>
+            </div>
+          </div>
+          <!-- Card 2: Luxury family home using a twilight facade -->
+          <div class="property-card">
+            <div class="property-image" style="background-image: url('assets/family_home.png');">
+              <span class="badge-3d">3D</span>
+            </div>
+            <div class="property-content">
+              <h3>Роскошный семейный дом</h3>
+              <p class="location"><i class="fa-solid fa-map-pin"></i> Вена, Австрия</p>
+              <p class="price">€1&nbsp;000&nbsp;000</p>
+              <p class="details">5&nbsp;комнат · 220&nbsp;м²</p>
+              <a href="property.html" class="btn small">Подробнее</a>
+            </div>
+          </div>
+          <!-- Card 3: Barcelona apartments using the property reference photo -->
+          <div class="property-card">
+            <div class="property-image" style="background-image: url('assets/barcelona_apartments.png');">
+              <span class="badge-3d">3D</span>
+            </div>
+            <div class="property-content">
+              <h3>Апартаменты в Барселоне</h3>
+              <p class="location"><i class="fa-solid fa-map-pin"></i> Барселона, Испания</p>
+              <p class="price">€750&nbsp;000</p>
+              <p class="details">3&nbsp;комнаты · 120&nbsp;м²</p>
+              <a href="property.html" class="btn small">Подробнее</a>
+            </div>
+          </div>
+          <!-- Card 4: Sea view villa using management illustration reference -->
+          <div class="property-card">
+            <div class="property-image" style="background-image: url('assets/sea_villa.png');">
+              <span class="badge-3d">3D</span>
+            </div>
+            <div class="property-content">
+              <h3>Вилла с видом на море</h3>
+              <p class="location"><i class="fa-solid fa-map-pin"></i> Лимассол, Кипр</p>
+              <p class="price">€2&nbsp;300&nbsp;000</p>
+              <p class="details">6&nbsp;комнат · 350&nbsp;м²</p>
+              <a href="property.html" class="btn small">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="features" id="features">
+      <div class="container">
+        <h2>Почему выбирают нас?</h2>
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="icon-wrapper"><ion-icon name="shield-checkmark-outline"></ion-icon></div>
+            <h3>Надежность</h3>
+            <p>Все объекты проходят тщательную проверку перед публикацией.</p>
+          </div>
+          <div class="feature-item">
+            <div class="icon-wrapper"><ion-icon name="cube-outline"></ion-icon></div>
+            <h3>Широкий выбор</h3>
+            <p>Сотни типов недвижимости: от квартир до коммерческих объектов.</p>
+          </div>
+          <div class="feature-item">
+            <div class="icon-wrapper"><ion-icon name="hand-left-outline"></ion-icon></div>
+            <h3>Прозрачные сделки</h3>
+            <p>Никаких скрытых комиссий – только честные условия.</p>
+          </div>
+          <div class="feature-item">
+            <div class="icon-wrapper"><ion-icon name="earth-outline"></ion-icon></div>
+            <h3>Глобальный охват</h3>
+            <p>Работаем по всему миру. Найдите недвижимость в любой стране.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action / Contact Section -->
+    <section class="cta" id="contact">
+      <div class="container cta-container">
+        <h2>Готовы начать поиск?</h2>
+        <p>Свяжитесь с нами, и мы поможем подобрать лучший объект для вас.</p>
+        <button class="btn" onclick="alert('Связаться: +49 123 456 78')"><i class="fa-solid fa-phone"></i> Позвонить</button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-about">
+          <h3>RealtyPro</h3>
+          <p>Технологичный портал для поиска недвижимости. Мы объединяем продавцов и покупателей, делая процесс покупки и аренды жилья максимально удобным.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Навигация</h4>
+          <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#popular">Объекты</a></li>
+            <li><a href="#features">О нас</a></li>
+            <li><a href="#contact">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Контакты</h4>
+          <p><i class="fa-solid fa-phone"></i> +49&nbsp;123&nbsp;456&nbsp;78</p>
+          <p><i class="fa-solid fa-envelope"></i> info@realtypro.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> Hauptstrasse 10, Berlin</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 RealtyPro. Все права защищены.</p>
+      </div>
+    </footer>
+
+    <!-- Append a query parameter to ensure the latest version of the script is loaded -->
+    <script src="script.js?v=3d"></script>
+  </body>
+</html>

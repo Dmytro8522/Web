@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Регистрация – RealtyPro</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Sx4wl/ryVcaX0FDvyfaUPaFn/WvjVYVJg3kuvf5xfrB2f0y0DTnI7q1G/Sx8bZysB6wxeGX3VZj6gVj4pRbHRA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-container">
+        <div class="logo">
+          <a href="index.html">Realty<span>Pro</span></a>
+        </div>
+        <nav class="nav">
+          <a href="index.html">Главная</a>
+          <a href="index.html#popular">Объекты</a>
+          <a href="index.html#features">О нас</a>
+          <a href="index.html#contact">Контакты</a>
+        </nav>
+      </div>
+    </header>
+    <section class="form-page">
+      <div class="form-container">
+        <h1>Регистрация</h1>
+        <form onsubmit="alert('Регистрация отправлена'); return false;">
+          <div class="form-group">
+            <label for="fullname">Имя и фамилия</label>
+            <input type="text" id="fullname" placeholder="Ваше имя" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Электронная почта</label>
+            <input type="email" id="email" placeholder="Введите email" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Пароль</label>
+            <input type="password" id="password" placeholder="Придумайте пароль" required />
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Повторите пароль</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="Повторите пароль"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Тип аккаунта</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="accountType" value="private" checked /> Частное лицо
+              </label>
+              <label>
+                <input type="radio" name="accountType" value="agency" /> Агентство
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn submit">Зарегистрироваться</button>
+          <p style="margin-top: 1rem; text-align: center;">
+            Уже есть аккаунт?
+            <a href="#" onclick="alert('Форма входа ещё не реализована'); return false;">Войти</a>
+          </p>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realty Portal – Карточка объекта</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Sx4wl/ryVcaX0FDvyfaUPaFn/WvjVYVJg3kuvf5xfrB2f0y0DTnI7q1G/Sx8bZysB6wxeGX3VZj6gVj4pRbHRA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Remove external Leaflet styles; we embed the map via an iframe for better compatibility -->
+    <link rel="stylesheet" href="styles.css" />
+
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container header-container">
+        <div class="logo">
+          <a href="index.html">Realty<span>Pro</span></a>
+        </div>
+        <nav class="nav">
+          <a href="index.html#popular">Объекты</a>
+          <a href="index.html#features">О нас</a>
+          <a href="index.html#contact">Контакты</a>
+          <button class="btn btn-outline small" onclick="alert('Войдите в систему')">Войти</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="property-page container">
+      <!-- Gallery & Basic Details -->
+      <section class="property-hero">
+        <div class="gallery">
+          <div class="main-image">
+            <img
+              id="mainImage"
+              src="assets/sea_villa.png"
+              alt="Изображение объекта"
+            />
+          </div>
+          <div class="thumbnails">
+            <img
+              src="assets/sea_villa.png"
+              alt="thumb1"
+              class="thumbnail active"
+              data-large="assets/sea_villa.png"
+            />
+            <img
+              src="assets/family_home.png"
+              alt="thumb2"
+              class="thumbnail"
+              data-large="assets/family_home.png"
+            />
+            <img
+              src="assets/barcelona_apartments.png"
+              alt="thumb3"
+              class="thumbnail"
+              data-large="assets/barcelona_apartments.png"
+            />
+            <img
+              src="assets/townhouse.png"
+              alt="thumb4"
+              class="thumbnail"
+              data-large="assets/townhouse.png"
+            />
+          </div>
+        </div>
+        <div class="property-info">
+          <h1>Солнечная вилла в Барселоне</h1>
+          <p class="address"><i class="fa-solid fa-location-dot"></i> Барселона, Испания</p>
+          <p class="price-large">€1&nbsp;500&nbsp;000</p>
+          <div class="attributes">
+            <div class="attr-item"><i class="fa-solid fa-bed"></i> 5&nbsp;комнат</div>
+            <div class="attr-item"><i class="fa-solid fa-bath"></i> 3&nbsp;ванные</div>
+            <div class="attr-item"><i class="fa-solid fa-maximize"></i> 250&nbsp;м²</div>
+            <div class="attr-item"><i class="fa-solid fa-calendar"></i> Построена в 2021</div>
+          </div>
+
+          <!-- Mini chart for comparative pricing / interest to enrich the header -->
+          <div class="property-stats">
+            <h3>Сравнение цен</h3>
+            <div class="stats-bar">
+              <span class="stat-label">Этот объект</span>
+              <div class="stat-bar" style="width: 85%; background-color: var(--accent);"></div>
+            </div>
+            <div class="stats-bar">
+              <span class="stat-label">Средняя цена</span>
+              <div class="stat-bar" style="width: 60%; background-color: var(--primary);"></div>
+            </div>
+            <div class="stats-bar">
+              <span class="stat-label">Минимальная цена</span>
+              <div class="stat-bar" style="width: 40%; background-color: #b0b0b0;"></div>
+            </div>
+          </div>
+          <div class="action-buttons">
+            <button class="btn" onclick="openContactModal()"><i class="fa-solid fa-phone"></i> Связаться</button>
+            <button class="btn btn-outline" onclick="toggleFavourite(this)"><i class="fa-solid fa-heart"></i> В избранное</button>
+      <!-- Button to scroll to the 3D tour section -->
+      <button type="button" class="btn btn-outline" onclick="document.getElementById('tourSection').scrollIntoView({behavior:'smooth'});"><i class="fa-solid fa-cube"></i> 3D&nbsp;тур</button>
+          </div>
+        </div>
+      </section>
+
+    <!-- 3D Tour Section -->
+<section id="tourSection" class="tour-section">
+  <!-- ВАЖНО! Памятка о вымышленности -->
+  <div style="
+      display: flex;
+      align-items: center;
+      background: #ffe6a0;
+      border: 2px solid #ffb300;
+      color: #7a5300;
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 22px;
+      font-size: 1.07rem;
+      font-weight: 500;
+      box-shadow: 0 2px 12px rgba(255,179,0,0.12);
+      ">
+    <i class="fa-solid fa-triangle-exclamation" style="font-size:1.6em; margin-right: 16px;"></i>
+    <span>
+      <b>Внимание:</b> данный 3D-тур создан для демонстрации возможностей сайта.<br>
+      Интерьер и меблировка <b>вымышленные</b> и <b>могут значительно отличаться от реального объекта</b>.
+    </span>
+  </div>
+  <h2>Виртуальный&nbsp;3D‑тур</h2>
+  <div class="immersive-container" style="position:relative; width:100%; padding-top:56.25%; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.12);">
+    <iframe
+      src="https://my.matterport.com/show/?m=sBVbSCvfDbW&mls=1"
+      frameborder="0"
+      allowfullscreen
+      allow="xr-spatial-tracking; gyroscope; accelerometer"
+      style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; border-radius:16px;"
+      title="Matterport 3D Tour"
+    ></iframe>
+  </div>
+  <p class="tour-hint">Вы можете перемещаться по 3D-туру с помощью мыши или стрелок клавиатуры</p>
+</section>
+
+      <!-- Description -->
+      <section class="description-section">
+        <h2>Описание</h2>
+        <p>
+          Солнечная вилла в Барселоне — это воплощение современного стиля и
+          средиземноморского уюта. Просторная гостиная с панорамными окнами
+          плавно переходит в кухню открытого типа, выходящую на террасу с
+          бассейном. На втором уровне расположены пять светлых спален с
+          отдельными гардеробными, а также три ванные комнаты. Дом построен
+          из экологичных материалов и оснащён системой «умный дом», которая
+          обеспечивает комфорт и энергоэффективность.
+        </p>
+      </section>
+
+      <!-- Immersive 3D interior view (mock) -->
+      <!--
+        This section stretches the full browser width and presents a 3D‑style
+        interior render as if the user is already inside the property. Overlaid
+        arrow controls hint at navigation (forward/back/left/right). Replace
+        the image with an actual interactive 3D viewer in a real application.
+      -->
+    
+
+      <!-- Characteristics Table -->
+      <section class="characteristics-section">
+        <h2>Характеристики</h2>
+        <table class="characteristics-table">
+          <tbody>
+            <tr>
+              <th>Тип объекта</th>
+              <td>Вилла</td>
+              <th>Этажей</th>
+              <td>2</td>
+            </tr>
+            <tr>
+              <th>Год постройки</th>
+              <td>2021</td>
+              <th>Материал</th>
+              <td>Монолит</td>
+            </tr>
+            <tr>
+              <th>Высота потолков</th>
+              <td>3,2&nbsp;м</td>
+              <th>Состояние</th>
+              <td>Новый дом</td>
+            </tr>
+            <tr>
+              <th>Отопление</th>
+              <td>Центральное + солнечные панели</td>
+              <th>Парковка</th>
+              <td>Гараж на 2&nbsp;машины</td>
+            </tr>
+            <tr>
+              <th>Балкон/терраса</th>
+              <td>Есть</td>
+              <th>Площадь участка</th>
+              <td>600&nbsp;м²</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Floorplan -->
+      <section class="floorplan-section">
+        <h2>Планировка</h2>
+        <!-- Display the original blueprint alongside a 3D top‑down view of the model. -->
+        <div class="floorplan-grid">
+          <figure>
+            <img src="assets/blueprint.png" alt="Планировка этажа" class="floorplan-image" />
+            <figcaption>Чертёж</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/immersive_top_view.png" alt="3D вид сверху" class="floorplan-image" />
+            <figcaption>3D&nbsp;вид сверху</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Map -->
+      <section class="map-section">
+        <h2>Расположение</h2>
+        <!-- Интерактивная карта на основе OpenStreetMap. Параметры bbox и marker задают область и метку -->
+        <iframe
+          title="Карта расположения"
+          width="100%"
+          height="400"
+          style="border: none; border-radius: 8px; box-shadow: 0 10px 20px var(--shadow); overflow: hidden;"
+          loading="lazy"
+          allowfullscreen
+          src="https://www.openstreetmap.org/export/embed.html?bbox=2.16%2C41.37%2C2.19%2C41.40&layer=mapnik&marker=41.385064%2C2.173404"
+        ></iframe>
+      </section>
+
+      <!-- Documents & Login Prompt -->
+      <section class="documents-section">
+        <h2>Документы</h2>
+        <div class="documents-card">
+          <p>Доступ к техническому паспорту, планировке и энергетическому паспорту доступен только для зарегистрированных пользователей.</p>
+          <button class="btn" onclick="alert('Авторизация скоро будет доступна')">
+            <i class="fa-solid fa-lock"></i> Войти для просмотра
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeContactModal()">&times;</span>
+        <h3>Связаться с агентом</h3>
+        <p>Оставьте свои данные, и мы перезвоним вам в ближайшее время.</p>
+        <form class="contact-form" onsubmit="sendContact(event)">
+          <label for="name">Имя</label>
+          <input type="text" id="name" name="name" required />
+          <label for="phone">Телефон</label>
+          <input type="tel" id="phone" name="phone" required />
+          <label for="message">Сообщение</label>
+          <textarea id="message" name="message" rows="3" placeholder="Ваш вопрос"></textarea>
+      <button type="submit" class="btn">Отправить</button>
+        </form>
+      </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-about">
+          <h3>RealtyPro</h3>
+          <p>Технологичный портал для поиска недвижимости. Мы объединяем продавцов и покупателей, делая процесс покупки и аренды жилья максимально удобным.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Навигация</h4>
+          <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="index.html#popular">Объекты</a></li>
+            <li><a href="index.html#features">О нас</a></li>
+            <li><a href="index.html#contact">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Контакты</h4>
+          <p><i class="fa-solid fa-phone"></i> +49&nbsp;123&nbsp;456&nbsp;78</p>
+          <p><i class="fa-solid fa-envelope"></i> info@realtypro.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> Hauptstrasse&nbsp;10, Berlin</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 RealtyPro. Все права защищены.</p>
+      </div>
+    </footer>
+
+    <!-- Append a query parameter to ensure the latest version of the script is loaded -->
+    <script src="script.js?v=3d"></script>
+  </body>
+</html>
